@@ -315,5 +315,14 @@
     angepasst, und das Datum oben ändert sich.</p>
   </section>
 </main>
+<script>
+  // The app opens this page at its own language (#ar, #en, #de). Some in-app browsers (Chrome Custom Tabs)
+  // load the page without jumping to the anchor, so scroll there once the page is laid out.
+  addEventListener('load', function () {
+    var id = location.hash.slice(1);
+    var target = id && document.getElementById(id);
+    if (target) target.scrollIntoView();
+  });
+</script>
 </body>
 </html>
